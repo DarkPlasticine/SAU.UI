@@ -23,15 +23,13 @@ namespace SAU.UI.Services
             INavigationService navigationService, 
             IPageService pageService, 
             IThemeService themeService, 
-            ITaskBarService taskBarService, 
-            INavigationWindow navigationWindow)
+            ITaskBarService taskBarService)
         {
             _serviceProvider = serviceProvider;
             _navigationService = navigationService;
             _pageService = pageService;
             _themeService = themeService;
             _taskBarService = taskBarService;
-            _navigationWindow = navigationWindow;
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
@@ -54,6 +52,8 @@ namespace SAU.UI.Services
             {
                 _navigationWindow = _serviceProvider.GetService(typeof(INavigationWindow)) as INavigationWindow;
                 _navigationWindow!.ShowWindow();
+
+                _navigationWindow.Navigate(typeof(Views.Pages.Home));
             }
 
             var notifyIconManager = _serviceProvider.GetService(typeof(INotifyIconService)) as INotifyIconService;

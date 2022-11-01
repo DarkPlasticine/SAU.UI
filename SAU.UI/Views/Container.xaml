@@ -43,12 +43,27 @@
                                 TransitionType="FadeInWithSlide">
                 <ui:NavigationStore.Items>
                     <ui:NavigationItem Cache="True"
-                                       Content="Установлено"
+                                       Content="Обзор"
                                        Icon="Home24"
                                        PageTag="home"
                                        PageType="{x:Type pages:Home}"/>
+                    <ui:NavigationItem Content="Поиск"
+                                       Icon="GlobeSearch24"
+                                       PageTag="home"
+                                       PageType="{x:Type pages:Home}"/>
+                    <ui:NavigationItem Cache="True"
+                                       Content="Новости"
+                                       Icon="News28"/>
                 </ui:NavigationStore.Items>
-
+                <ui:NavigationStore.Footer>
+                    <ui:NavigationItem Cache="True"
+                                       Content="Настройки"
+                                       PageType="{x:Type pages:Setting}"
+                                       Icon="Settings28"/>
+                    <ui:NavigationItem Cache="True"
+                                       Content="About"
+                                       Icon="QuestionCircle28"/>
+                </ui:NavigationStore.Footer>
             </ui:NavigationStore>
 
             <Border Grid.Column="1"
@@ -98,5 +113,23 @@
             Grid.Row="0"
             Grid.RowSpan="2"
             ButtonLeftName="Click me if you can!" />
+
+        <ui:TitleBar 
+            Title="Sirus Addon Updater"
+            Grid.Row="0"
+            ForceShutdown="False"
+            Icon="pack://application:,,,/Resources/alrosa-gr.png"
+            MinimizeToTray="False"
+            ShowClose="True"
+            ShowMaximize="True"
+            ShowMinimize="True"
+            UseSnapLayout="True">
+            <ui:TitleBar.Tray>
+                <ui:NotifyIcon FocusOnLeftClick="True"
+                               Icon="pack://application:,,,/Resources/alrosa-gr.png"
+                               MenuOnRightClick="True"
+                               TooltipText="WPF UI"></ui:NotifyIcon>
+            </ui:TitleBar.Tray>
+        </ui:TitleBar>
     </Grid>
 </ui:UiWindow>

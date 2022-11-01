@@ -23,11 +23,14 @@ namespace SAU.UI
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
         private static readonly IHost _host = Host
             .CreateDefaultBuilder()
-            .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)); })
+            .ConfigureAppConfiguration(c =>
+            {
+                c.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location));
+            })
             .ConfigureServices((context, services) =>
             {
                 services.AddHostedService<ApplicationHostService>();
@@ -59,6 +62,12 @@ namespace SAU.UI
                 // Main window container with navigation
                 services.AddScoped<INavigationWindow, Views.Container>();
                 services.AddScoped<ContainerViewModel>();
+
+                services.AddScoped<Views.Pages.Home>();
+                services.AddScoped<HomeViewModel>();
+
+                services.AddScoped<Views.Pages.Setting>();
+                services.AddScoped<SettingViewModel>();
 
                 // Configuration
                 services.Configure<AppConfig>(context.Configuration.GetSection(nameof(AppConfig)));

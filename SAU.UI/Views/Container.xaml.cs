@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using SAU.UI.Models;
 using SAU.UI.ViewModels;
+using Wpf.Ui.Appearance;
 using Wpf.Ui.Common;
 using Wpf.Ui.Controls.Interfaces;
 using Wpf.Ui.Mvvm.Contracts;
@@ -32,7 +24,13 @@ namespace SAU.UI.Views
 
         public ContainerViewModel ViewModel { get; }
 
-        public Container(ContainerViewModel viewModel, INavigationService navigationService, IPageService pageService, IThemeService themeService, ITaskBarService taskBarService, ISnackbarService snackbarService, IDialogService dialogService)
+        public Container(ContainerViewModel viewModel, 
+            INavigationService navigationService, 
+            IPageService pageService, 
+            IThemeService themeService, 
+            ITaskBarService taskBarService, 
+            ISnackbarService snackbarService, 
+            IDialogService dialogService)
         {
             ViewModel = viewModel;
             DataContext = this;
@@ -43,6 +41,9 @@ namespace SAU.UI.Views
             InitializeComponent();
 
             SetPageService(pageService);
+
+            navigationService.SetNavigationControl(RootNavigation);
+            dialogService.SetDialogControl(RootDialog);
 
             Loaded += (_, _) => InvokeSplashScreen();
         }

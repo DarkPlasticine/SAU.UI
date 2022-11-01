@@ -1,0 +1,90 @@
+﻿<ui:UiPage x:Class="SAU.UI.Views.Pages.Setting"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SAU.UI.Views.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance local:Setting, IsDesignTimeCreatable=False}"
+      Scrollable="True"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Настройки">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"
+                Height="100"
+                CornerRadius="8 0 0 0">
+            <!--<Border.Background>
+                --><!--<ImageBrush ImageSource="../../Resources/alrosa-gr.png"
+                            RenderOptions.BitmapScalingMode="HighQuality"
+                            Stretch="UniformToFill"/>--><!--
+            </Border.Background>-->
+            <Border CornerRadius="8,0,0,0">
+                <Border.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Offset="0" Color="#1F000000" />
+                        <GradientStop Offset="1" Color="#4F000000" />
+                    </RadialGradientBrush>
+                </Border.Background>
+                    <StackPanel
+                        Margin="24 0 0 0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal"
+                        Background="Transparent">
+                        <ui:SymbolIcon Symbol="Settings48"
+                                       VerticalAlignment="Center"
+                                       FontSize="36"
+                                       Filled="True"
+                                       Foreground="{DynamicResource SystemAccentColorPrimaryBrush}"
+                                       Margin="0 0 8 0"/>
+                        <TextBlock
+                            FontSize="28"
+                            FontWeight="Bold"
+                            Foreground="#FFFFFF"
+                            Text="Настройки" />
+                    </StackPanel>
+            </Border>
+        </Border>
+
+        <VirtualizingStackPanel Grid.Row="1"
+                                Margin="12 18 12 0"
+                                Orientation="Vertical"
+                                VirtualizationMode="Recycling"
+                                IsVirtualizing="True">
+            <StackPanel Margin="0 0 4 0">
+
+                <!--Путь к папке с игрой-->
+                <TextBlock Foreground="{DynamicResource TextFillColorSecondaryBrush}" Text="Путь к папке с игрой"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ui:TextBox Grid.Column="0"
+                                Margin="0,8,8,0" 
+                                Text="" 
+                                IsReadOnly="True" 
+                                Icon="Folder24"/>
+                    <ui:Button Grid.Column="1"
+                               Appearance="Primary"
+                               Margin="0 8 0 0"
+                               VerticalAlignment="Center"
+                               ToolTip="Указать папку"
+                               Padding="6"
+                               FontSize="16"
+                               Icon="Open24"
+                               />
+                </Grid>
+
+                <!--Смена темы-->
+
+            </StackPanel>
+        </VirtualizingStackPanel>
+    </Grid>
+</ui:UiPage>
