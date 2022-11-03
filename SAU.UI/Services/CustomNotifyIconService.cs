@@ -13,7 +13,7 @@ namespace SAU.UI.Services
         {
             TooltipText = "Sirus Addon Updater";
 
-            Icon = BitmapFrame.Create(new Uri("pack://application:,,,/Resources/alrosa-gr.png", UriKind.Absolute));
+            Icon = BitmapFrame.Create(new Uri("pack://application:,,,/Resources/icon.png", UriKind.Absolute));
 
             ContextMenu = new ContextMenu
             {

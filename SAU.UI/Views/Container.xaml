@@ -93,7 +93,7 @@
                 <Image
                     MaxWidth="180"
                     RenderOptions.BitmapScalingMode="HighQuality"
-                    Source="pack://application:,,,/Resources/alrosa-gr.png" />
+                    Source="pack://application:,,,/Resources/logo.png" />
             </Grid>
             <StackPanel Grid.Column="1" VerticalAlignment="Center">
                 <ui:ProgressRing IsIndeterminate="True" />
@@ -101,7 +101,7 @@
                     Margin="0,12,0,0"
                     FontSize="16"
                     FontWeight="Medium"
-                    Text="Preparing app for you."
+                    Text="Загрузка приложения"
                     TextAlignment="Center"
                     TextWrapping="Wrap" />
             </StackPanel>
@@ -118,7 +118,7 @@
             Title="Sirus Addon Updater"
             Grid.Row="0"
             ForceShutdown="False"
-            Icon="pack://application:,,,/Resources/alrosa-gr.png"
+            Icon="pack://application:,,,/Resources/logo.png"
             MinimizeToTray="False"
             ShowClose="True"
             ShowMaximize="True"
@@ -126,9 +126,9 @@
             UseSnapLayout="True">
             <ui:TitleBar.Tray>
                 <ui:NotifyIcon FocusOnLeftClick="True"
-                               Icon="pack://application:,,,/Resources/alrosa-gr.png"
+                               Icon="pack://application:,,,/Resources/logo.png"
                                MenuOnRightClick="True"
-                               TooltipText="WPF UI"></ui:NotifyIcon>
+                               TooltipText="Sirus Addon Updater"></ui:NotifyIcon>
             </ui:TitleBar.Tray>
         </ui:TitleBar>
     </Grid>

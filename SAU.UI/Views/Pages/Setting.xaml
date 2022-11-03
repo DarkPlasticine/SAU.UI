@@ -19,17 +19,18 @@
         <Border Grid.Row="0"
                 Height="100"
                 CornerRadius="8 0 0 0">
-            <!--<Border.Background>
-                --><!--<ImageBrush ImageSource="../../Resources/alrosa-gr.png"
+            <Border.Background>
+                <ImageBrush ImageSource="pack://application:,,,/Resources/alliance_logo.png"
                             RenderOptions.BitmapScalingMode="HighQuality"
-                            Stretch="UniformToFill"/>--><!--
-            </Border.Background>-->
-            <Border CornerRadius="8,0,0,0">
-                <Border.Background>
-                    <RadialGradientBrush>
-                        <GradientStop Offset="0" Color="#1F000000" />
-                        <GradientStop Offset="1" Color="#4F000000" />
-                    </RadialGradientBrush>
+                            Stretch="Uniform"
+                            />
+            </Border.Background>
+            <Border CornerRadius="8,0,0,0">                
+                <Border.Background>                    
+                    <LinearGradientBrush>
+                        <GradientStop Offset="0" Color="#1F00001F" />
+                        <GradientStop Offset="1" Color="#4F0000FF" />
+                    </LinearGradientBrush>
                 </Border.Background>
                     <StackPanel
                         Margin="24 0 0 0"
@@ -58,32 +59,42 @@
                                 VirtualizationMode="Recycling"
                                 IsVirtualizing="True">
             <StackPanel Margin="0 0 4 0">
-
+                
                 <!--Путь к папке с игрой-->
-                <TextBlock Foreground="{DynamicResource TextFillColorSecondaryBrush}" Text="Путь к папке с игрой"/>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <ui:TextBox Grid.Column="0"
-                                Margin="0,8,8,0" 
-                                Text="" 
-                                IsReadOnly="True" 
-                                Icon="Folder24"/>
-                    <ui:Button Grid.Column="1"
+                <ui:CardControl Icon="Folder24">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <TextBlock Text="Папка игры"
+                                       FontWeight="Medium"
+                                       FontSize="13"/>
+                            <TextBlock FontSize="12"
+                                       Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                                       Text="{Binding }"/>
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:Button Icon="Games24" 
                                Appearance="Primary"
-                               Margin="0 8 0 0"
-                               VerticalAlignment="Center"
-                               ToolTip="Указать папку"
-                               Padding="6"
-                               FontSize="16"
-                               Icon="Open24"
-                               />
-                </Grid>
+                               FontWeight="Medium"
+                               FontSize="18"
+                               ToolTip="Выбор папки игры"/>
+                </ui:CardControl>
+                
 
                 <!--Смена темы-->
-
+                <ui:CardControl Margin="0 8 0 0"
+                                Icon="DarkTheme24">
+                    <ui:CardControl.Header>
+                        <StackPanel>
+                            <TextBlock Text="Тема приложения"
+                                       FontWeight="Medium"
+                                       FontSize="13"/>
+                            <TextBlock FontSize="12"
+                                       Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                                       Text="Переключение темы приложения"/>
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <ui:ToggleSwitch IsChecked="{Binding ViewModel.ThemeApp}"/>
+                </ui:CardControl>
             </StackPanel>
         </VirtualizingStackPanel>
     </Grid>

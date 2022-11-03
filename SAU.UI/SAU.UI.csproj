@@ -11,6 +11,7 @@
     <Authors>DarkPlasticine</Authors>
     <Version>0.0.1-alpha</Version>
     <AssemblyName>Sirus Addon Updater</AssemblyName>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -22,7 +23,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\alrosa-gr.png" />
+    <None Remove="Resources\alliance_logo.png" />
+    <None Remove="Resources\horde_logo.png" />
+    <None Remove="Resources\icon.png" />
+    <None Remove="Resources\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,7 +48,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\alrosa-gr.png" />
+    <Resource Include="Resources\alliance_logo.png" />
+    <Resource Include="Resources\horde_logo.png" />
+    <Resource Include="Resources\icon.png" />
+    <Resource Include="Resources\logo.png" />
   </ItemGroup>
 
 </Project>
