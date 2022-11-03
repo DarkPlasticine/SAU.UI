@@ -15,6 +15,37 @@
                                 Orientation="Vertical"
                                 VirtualizationMode="Recycling"
                                 IsVirtualizing="True">
+            <ui:CardAction Content="Github"
+                           Icon="Open28"
+                           Click="CardAction_Click"/>
+
+            <TextBlock Margin="0 16 0 0"
+                       FontSize="16"
+                       Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                       Text="{DynamicResource tbSources}"/>
+            <ui:CardControl Margin="0 8 0 0">
+                <ui:CardControl.Header>
+                    <StackPanel>
+                        <ui:Hyperlink Content="{DynamicResource hlIcon}"
+                                      Icon="Link48"
+                                      Cursor="Hand"
+                                      NavigateUri="https://vectorified.com/wow-alliance-icon" />
+                        <ui:Hyperlink Content="{DynamicResource hlImage}"
+                                      Icon="Link48"
+                                      Cursor="Hand"                                      
+                                      NavigateUri="https://vectorified.com/wow-alliance-icon/" />
+                        <ui:Hyperlink Content="{DynamicResource hlStyle}"
+                                      Icon="Link48"
+                                      Cursor="Hand"                                      
+                                      NavigateUri="https://github.com/lepoco/wpfui" />
+                        <ui:Hyperlink Content="{DynamicResource hlOpenDialog}"
+                                      Icon="Link48"
+                                      Cursor="Hand"                                      
+                                      NavigateUri="https://github.com/ookii-dialogs/ookii-dialogs-wpf" />
+                    </StackPanel>                    
+                </ui:CardControl.Header>
+                
+            </ui:CardControl>
 
         </VirtualizingStackPanel>
     </Grid>

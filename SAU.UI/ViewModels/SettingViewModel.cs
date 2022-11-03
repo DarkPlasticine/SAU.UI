@@ -151,7 +151,7 @@ namespace SAU.UI.ViewModels
 
         private void ShowSnackbar()
         {
-            _snackbarService.Show(Application.Current.Resources["MenuItemSettings"].ToString(), "The cake is a lie...", SymbolRegular.Settings24, ControlAppearance.Primary);
+            //_snackbarService.Show(Application.Current.Resources["MenuItemSettings"].ToString(), "The cake is a lie...", SymbolRegular.Settings24, ControlAppearance.Primary);
         }
     }
 }

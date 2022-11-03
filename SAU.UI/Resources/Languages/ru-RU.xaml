@@ -26,5 +26,10 @@
     <system:String x:Key="tbParamThemeLight">Установлена светлая тема</system:String>
 
     <!--Окно о программе-->
+    <system:String x:Key="tbSources">Использованные ресурсы</system:String>
+    <system:String x:Key="hlIcon">Иконка приложения</system:String>
+    <system:String x:Key="hlImage">Изображения</system:String>
+    <system:String x:Key="hlStyle">Стиль приложения</system:String>
+    <system:String x:Key="hlOpenDialog">Диалоги выбора</system:String>
 
 </ResourceDictionary>

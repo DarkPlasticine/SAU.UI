@@ -26,4 +26,10 @@
     <system:String x:Key="tbParamThemeLight">Select light theme</system:String>
 
     <!--Окно о программе-->
+    <system:String x:Key="tbSources">Sources</system:String>
+    <system:String x:Key="hlIcon">Icon App</system:String>
+    <system:String x:Key="hlImage">Images</system:String>
+    <system:String x:Key="hlStyle">Style</system:String>
+    <system:String x:Key="hlOpenDialog">Open dialog</system:String>
+
 </ResourceDictionary>
