@@ -3,21 +3,28 @@
                     xmlns:system="clr-namespace:System;assembly=System.Runtime">
 
     <!--Меню-->
-    <system:String x:Key="Home">Обзор</system:String>
-    <system:String x:Key="Search">Поиск</system:String>
-    <system:String x:Key="News">Новости</system:String>
-    <system:String x:Key="Settings">Настройки</system:String>
-    <system:String x:Key="About">About</system:String>
+    <system:String x:Key="MenuItemHome">Обзор</system:String>
+    <system:String x:Key="MenuItemSearch">Поиск</system:String>
+    <system:String x:Key="MenuItemNews">Новости</system:String>
+    <system:String x:Key="MenuItemSettings">Настройки</system:String>
+    <system:String x:Key="MenuItemAbout">About</system:String>
+
+    <!--Окно установленных дополнений-->
+
+    <!--Окно поиска дополнений-->
+
+    <!--Окно новостей-->
 
     <!--Окно настроек-->
-    <system:String x:Key="ParamGame">Игра</system:String>
-    <system:String x:Key="ParamFolderGame">Папка игры</system:String>
-    <system:String x:Key="ParamFolderGameTooltip">Выбор папки игры</system:String>
-    <system:String x:Key="ParamApplication">Приложение</system:String>
-    <system:String x:Key="ParamLanguage">Язык приложения</system:String>
-    <system:String x:Key="ParamTheme">Тема приложения</system:String>
-    <system:String x:Key="ParamThemeDark">Установлена темная тема</system:String>
-    <system:String x:Key="ParamThemeLight">Установлена светлая тема</system:String>
+    <system:String x:Key="tbGame">Игра</system:String> <!---->
+    <system:String x:Key="tbFolderGame">Папка игры</system:String>
+    <system:String x:Key="ttFolderGame">Выбор папки игры</system:String>
+    <system:String x:Key="tbApplication">Приложение</system:String>
+    <system:String x:Key="tbLanguage">Язык приложения</system:String>
+    <system:String x:Key="tbTheme">Тема приложения</system:String>
+    <system:String x:Key="tbParamThemeDark">Установлена темная тема</system:String>
+    <system:String x:Key="tbParamThemeLight">Установлена светлая тема</system:String>
 
+    <!--Окно о программе-->
 
 </ResourceDictionary>

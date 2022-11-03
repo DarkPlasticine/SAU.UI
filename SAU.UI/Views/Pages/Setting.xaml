@@ -23,14 +23,14 @@
                                 IsVirtualizing="True">
             <StackPanel Margin="0 0 4 0">
 
-                <TextBlock Text="{DynamicResource ParamGame}"
+                <TextBlock Text="{DynamicResource tbGame}"
                            Foreground="{DynamicResource TextFillColorSecondaryBrush}"/>
                 <!--Путь к папке с игрой-->
                 <ui:CardControl Icon="Folder24"
                                 Margin="0 8 0 0">
                     <ui:CardControl.Header>
                         <StackPanel>
-                            <TextBlock Text="{DynamicResource ParamFolderGame}"
+                            <TextBlock Text="{DynamicResource tbFolderGame}"
                                        FontWeight="Medium"
                                        FontSize="13"/>
                             <TextBlock FontSize="12"
@@ -43,10 +43,10 @@
                                FontWeight="Medium"
                                FontSize="18"
                                Command="{Binding ViewModel.SelectFolderCommand}"
-                               ToolTip="{DynamicResource ParamFolderGameTooltip}"/>
+                               ToolTip="{DynamicResource ttFolderGame}"/>
                 </ui:CardControl>
 
-                <TextBlock Text="{DynamicResource ParamApplication}"
+                <TextBlock Text="{DynamicResource tbApplication}"
                            Foreground="{DynamicResource TextFillColorSecondaryBrush}"
                            Margin="0 16 0 0"/>
 
@@ -54,7 +54,7 @@
                 <ui:CardControl Margin="0 8 0 0"
                                 Icon="LocalLanguage24">
                     <ui:CardControl.Header>
-                        <TextBlock Text="{DynamicResource ParamLanguage}"/>
+                        <TextBlock Text="{DynamicResource tbLanguage}"/>
                     </ui:CardControl.Header>
                     <ComboBox IsEditable="False"
                               ItemsSource="{Binding ViewModel.LanguageList, Mode=OneWay}"
@@ -67,12 +67,12 @@
                                 Icon="DarkTheme24">
                     <ui:CardControl.Header>
                         <StackPanel>
-                            <TextBlock Text="{DynamicResource ParamTheme}"
+                            <TextBlock Text="{DynamicResource tbTheme}"
                                        FontWeight="Medium"
                                        FontSize="13"/>
                             <TextBlock FontSize="12"
                                        Foreground="{DynamicResource TextFillColorTertiaryBrush}"
-                                       Text="{Binding ViewModel.SelectedThemeApp}"/>
+                                       Text="{Binding ViewModel.SelectedThemeApp, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"/>
                         </StackPanel>
                     </ui:CardControl.Header>
                     <ui:ToggleSwitch IsChecked="{Binding ViewModel.ThemeApp}"/>

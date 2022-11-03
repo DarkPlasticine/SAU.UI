@@ -2,19 +2,28 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=System.Runtime">
     <!--Меню-->
-    <system:String x:Key="Home">Home</system:String>
-    <system:String x:Key="Search">Search</system:String>
-    <system:String x:Key="News">News</system:String>
-    <system:String x:Key="Settings">Settings</system:String>
-    <system:String x:Key="About">About</system:String>
+    <system:String x:Key="MenuItemHome">Home</system:String>
+    <system:String x:Key="MenuItemSearch">Search</system:String>
+    <system:String x:Key="MenuItemNews">News</system:String>
+    <system:String x:Key="MenuItemSettings">Settings</system:String>
+    <system:String x:Key="MenuItemAbout">About</system:String>
+
+    <!--Окно установленных дополнений-->
+
+    <!--Окно поиска дополнений-->
+
+    <!--Окно новостей-->
 
     <!--Окно настроек-->
-    <system:String x:Key="ParamGame">Game</system:String>
-    <system:String x:Key="ParamFolderGame">Game folder</system:String>
-    <system:String x:Key="ParamFolderGameTooltip">Select game folder</system:String>
-    <system:String x:Key="ParamApplication">Application</system:String>
-    <system:String x:Key="ParamLanguage">Language</system:String>
-    <system:String x:Key="ParamTheme">Application theme</system:String>
-    <system:String x:Key="ParamThemeDark">Selected dark theme</system:String>
-    <system:String x:Key="ParamThemeLight">Selected light theme</system:String>
+    <system:String x:Key="tbGame">Game</system:String>
+    <!---->
+    <system:String x:Key="tbFolderGame">Game folder</system:String>
+    <system:String x:Key="ttFolderGame">Select game folder</system:String>
+    <system:String x:Key="tbApplication">Application</system:String>
+    <system:String x:Key="tbLanguage">Language</system:String>
+    <system:String x:Key="tbTheme">Theme</system:String>
+    <system:String x:Key="tbParamThemeDark">Select dark theme</system:String>
+    <system:String x:Key="tbParamThemeLight">Select light theme</system:String>
+
+    <!--Окно о программе-->
 </ResourceDictionary>

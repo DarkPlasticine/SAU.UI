@@ -36,8 +36,15 @@ namespace SAU.UI.ViewModels
 
             set
             {
+                SelectedThemeApp = value
+                    ? Application.Current.Resources["tbParamThemeDark"].ToString()
+                    : Application.Current.Resources["tbParamThemeLight"].ToString();
+
                 _themeService.SetTheme(_themeService.GetTheme() == ThemeType.Dark ? ThemeType.Light : ThemeType.Dark);
-                SelectedThemeApp = value ? "Установлена темная тема" : "Установлена светлая тема";
+                
+                //SelectedThemeApp = _themeService.GetTheme() == ThemeType.Dark
+                //    ? Application.Current.Resources["tbParamThemeDark"].ToString()
+                //    : Application.Current.Resources["tbParamThemeLight"].ToString();
             }
         }
 
@@ -82,7 +89,7 @@ namespace SAU.UI.ViewModels
         {
             _navigationService = navigationService;
             _themeService = themeService;
-            _selectedThemeApp = ThemeApp ? Application.Current.Resources["ParamThemeDark"].ToString() : Application.Current.Resources["ParamThemeLight"].ToString();
+            SelectedThemeApp = _themeService.GetTheme() == ThemeType.Dark ? Application.Current.Resources["tbParamThemeDark"].ToString() : Application.Current.Resources["tbParamThemeLight"].ToString();
 
             _languageList = new[]
             {
@@ -127,6 +134,10 @@ namespace SAU.UI.ViewModels
             {
                 Application.Current.Resources.MergedDictionaries.Add(newLang);
             }
+
+            SelectedThemeApp = ThemeApp
+                ? Application.Current.Resources["tbParamThemeDark"].ToString()
+                : Application.Current.Resources["tbParamThemeLight"].ToString();
         }
     }
 }

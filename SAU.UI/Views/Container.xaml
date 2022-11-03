@@ -44,24 +44,22 @@
                                 TransitionType="FadeInWithSlide">
                 <ui:NavigationStore.Items>
                     <ui:NavigationItem Cache="True"
-                                       Content="{DynamicResource Home}"
+                                       Content="{DynamicResource MenuItemHome}"
                                        Icon="Home24"
-                                       PageTag="home"
                                        PageType="{x:Type pages:Home}"/>
-                    <ui:NavigationItem Content="{DynamicResource Search}"
+                    <ui:NavigationItem Content="{DynamicResource MenuItemSearch}"
                                        Icon="GlobeSearch24"
-                                       PageTag="search"
                                        PageType="{x:Type pages:Home}"/>
                     <ui:NavigationItem Cache="True"
-                                       Content="{DynamicResource News}"
+                                       Content="{DynamicResource MenuItemNews}"
                                        Icon="News28"/>
                 </ui:NavigationStore.Items>
                 <ui:NavigationStore.Footer>
-                    <ui:NavigationItem Content="{DynamicResource Settings}"
+                    <ui:NavigationItem Content="{DynamicResource MenuItemSettings}"
                                        PageType="{x:Type pages:Setting}"
                                        Icon="Settings28"/>
 
-                    <ui:NavigationItem Content="{DynamicResource About}"
+                    <ui:NavigationItem Content="{DynamicResource MenuItemAbout}"
                                        Icon="QuestionCircle28"/>
                 </ui:NavigationStore.Footer>
             </ui:NavigationStore>
@@ -82,7 +80,7 @@
                                    Margin="18"
                                    HorizontalAlignment="Left"
                                    FontSize="24"
-                                   Navigation="{Binding ElementName=RootNavigation, UpdateSourceTrigger=PropertyChanged, Mode=Default}"/>
+                                   Navigation="{Binding ElementName=RootNavigation}"/>
 
                     <ui:Snackbar Grid.Row="1"
                                  x:Name="RootSnackbar"
