@@ -43,15 +43,15 @@
                                 TransitionDuration="200"
                                 TransitionType="FadeInWithSlide">
                 <ui:NavigationStore.Items>
-                    <ui:NavigationItem Cache="True"
-                                       Content="{DynamicResource MenuItemHome}"
+                    <ui:NavigationItem Content="{DynamicResource MenuItemHome}"
                                        Icon="Home24"
                                        PageType="{x:Type pages:Home}"/>
+                    
                     <ui:NavigationItem Content="{DynamicResource MenuItemSearch}"
                                        Icon="GlobeSearch24"
                                        PageType="{x:Type pages:Home}"/>
-                    <ui:NavigationItem Cache="True"
-                                       Content="{DynamicResource MenuItemNews}"
+
+                    <ui:NavigationItem Content="{DynamicResource MenuItemNews}"
                                        Icon="News28"/>
                 </ui:NavigationStore.Items>
                 <ui:NavigationStore.Footer>
@@ -60,6 +60,7 @@
                                        Icon="Settings28"/>
 
                     <ui:NavigationItem Content="{DynamicResource MenuItemAbout}"
+                                       PageType="{x:Type pages:About}"
                                        Icon="QuestionCircle28"/>
                 </ui:NavigationStore.Footer>
             </ui:NavigationStore>

@@ -69,6 +69,8 @@ namespace SAU.UI
 
                 services.AddScoped<Views.Pages.Setting>();
                 services.AddScoped<SettingViewModel>();
+                
+                services.AddScoped<Views.Pages.About>();
 
                 // Configuration
                 services.Configure<AppConfig>(context.Configuration.GetSection(nameof(AppConfig)));

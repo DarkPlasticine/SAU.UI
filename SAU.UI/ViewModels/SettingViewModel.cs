@@ -7,11 +7,13 @@ using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using SAU.UI.Models;
 using System.Windows.Input;
-using CommunityToolkit.Mvvm.Input;
+//using CommunityToolkit.Mvvm.Input;
 using SAU.UI.Views.Pages;
 using Wpf.Ui.Appearance;
 using Wpf.Ui.Mvvm.Contracts;
 using Wpf.Ui.Mvvm.Services;
+using Wpf.Ui.Common;
+
 
 namespace SAU.UI.ViewModels
 {
@@ -19,6 +21,8 @@ namespace SAU.UI.ViewModels
     {
         private readonly INavigationService _navigationService;
         private readonly IThemeService _themeService;
+        private readonly ISnackbarService _snackbarService;
+        private readonly IDialogService _dialogService;
 
         private ICommand _selectFolderCommand;
         private ICommand _changeLangCommand;
@@ -41,7 +45,7 @@ namespace SAU.UI.ViewModels
                     : Application.Current.Resources["tbParamThemeLight"].ToString();
 
                 _themeService.SetTheme(_themeService.GetTheme() == ThemeType.Dark ? ThemeType.Light : ThemeType.Dark);
-                
+                ShowSnackbar();
                 //SelectedThemeApp = _themeService.GetTheme() == ThemeType.Dark
                 //    ? Application.Current.Resources["tbParamThemeDark"].ToString()
                 //    : Application.Current.Resources["tbParamThemeLight"].ToString();
@@ -85,10 +89,13 @@ namespace SAU.UI.ViewModels
             set => SetProperty(ref _languageList, value);
         }
 
-        public SettingViewModel(INavigationService navigationService, IThemeService themeService)
+        public SettingViewModel(INavigationService navigationService, IThemeService themeService, ISnackbarService snackbarService)
         {
             _navigationService = navigationService;
             _themeService = themeService;
+            _snackbarService = App.GetService<ISnackbarService>();
+            _dialogService = App.GetService<IDialogService>(); 
+
             SelectedThemeApp = _themeService.GetTheme() == ThemeType.Dark ? Application.Current.Resources["tbParamThemeDark"].ToString() : Application.Current.Resources["tbParamThemeLight"].ToString();
 
             _languageList = new[]
@@ -138,6 +145,13 @@ namespace SAU.UI.ViewModels
             SelectedThemeApp = ThemeApp
                 ? Application.Current.Resources["tbParamThemeDark"].ToString()
                 : Application.Current.Resources["tbParamThemeLight"].ToString();
+
+            ShowSnackbar();
+        }
+
+        private void ShowSnackbar()
+        {
+            _snackbarService.Show(Application.Current.Resources["MenuItemSettings"].ToString(), "The cake is a lie...", SymbolRegular.Settings24, ControlAppearance.Primary);
         }
     }
 }

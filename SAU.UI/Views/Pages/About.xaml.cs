@@ -12,24 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SAU.UI.ViewModels;
-using Wpf.Ui.Common.Interfaces;
 using Wpf.Ui.Mvvm.Contracts;
 
 namespace SAU.UI.Views.Pages
 {
     /// <summary>
-    /// Interaction logic for Setting.xaml
+    /// Interaction logic for About.xaml
     /// </summary>
-    public partial class Setting : INavigableView<SettingViewModel>
+    public partial class About
     {
-        public Setting(SettingViewModel viewModel)
+        public About(ISnackbarService snackbarService, IDialogService dialogService)
         {
-            ViewModel = viewModel;
-
             InitializeComponent();
         }
-
-        public SettingViewModel ViewModel { get; }
     }
 }
