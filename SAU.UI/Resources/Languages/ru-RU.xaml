@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+
+    <!--Меню-->
+    <system:String x:Key="Home">Обзор</system:String>
+    <system:String x:Key="Search">Поиск</system:String>
+    <system:String x:Key="News">Новости</system:String>
+    <system:String x:Key="Settings">Настройки</system:String>
+    <system:String x:Key="About">About</system:String>
+
+    <!--Окно настроек-->
+    <system:String x:Key="ParamGame">Игра</system:String>
+    <system:String x:Key="ParamFolderGame">Папка игры</system:String>
+    <system:String x:Key="ParamFolderGameTooltip">Выбор папки игры</system:String>
+    <system:String x:Key="ParamApplication">Приложение</system:String>
+    <system:String x:Key="ParamLanguage">Язык приложения</system:String>
+    <system:String x:Key="ParamTheme">Тема приложения</system:String>
+    <system:String x:Key="ParamThemeDark">Установлена темная тема</system:String>
+    <system:String x:Key="ParamThemeLight">Установлена светлая тема</system:String>
+
+
+</ResourceDictionary>

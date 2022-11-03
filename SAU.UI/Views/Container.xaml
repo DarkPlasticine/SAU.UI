@@ -14,6 +14,7 @@
     d:DesignHeight="650"
     d:DesignWidth="900"
     Background="{ui:ThemeResource ApplicationBackgroundBrush}"
+    RenderOptions.ClearTypeHint="Enabled"
     ExtendsContentIntoTitleBar="True"
     WindowBackdropType="Mica"
     WindowCornerPreference="Round"
@@ -43,25 +44,24 @@
                                 TransitionType="FadeInWithSlide">
                 <ui:NavigationStore.Items>
                     <ui:NavigationItem Cache="True"
-                                       Content="Обзор"
+                                       Content="{DynamicResource Home}"
                                        Icon="Home24"
                                        PageTag="home"
                                        PageType="{x:Type pages:Home}"/>
-                    <ui:NavigationItem Content="Поиск"
+                    <ui:NavigationItem Content="{DynamicResource Search}"
                                        Icon="GlobeSearch24"
-                                       PageTag="home"
+                                       PageTag="search"
                                        PageType="{x:Type pages:Home}"/>
                     <ui:NavigationItem Cache="True"
-                                       Content="Новости"
+                                       Content="{DynamicResource News}"
                                        Icon="News28"/>
                 </ui:NavigationStore.Items>
                 <ui:NavigationStore.Footer>
-                    <ui:NavigationItem Cache="True"
-                                       Content="Настройки"
+                    <ui:NavigationItem Content="{DynamicResource Settings}"
                                        PageType="{x:Type pages:Setting}"
                                        Icon="Settings28"/>
-                    <ui:NavigationItem Cache="True"
-                                       Content="About"
+
+                    <ui:NavigationItem Content="{DynamicResource About}"
                                        Icon="QuestionCircle28"/>
                 </ui:NavigationStore.Footer>
             </ui:NavigationStore>
@@ -77,33 +77,54 @@
 
                     <Frame x:Name="RootFrame"
                            Grid.Row="1"/>
+
+                    <ui:Breadcrumb Grid.Row="0"
+                                   Margin="18"
+                                   HorizontalAlignment="Left"
+                                   FontSize="24"
+                                   Navigation="{Binding ElementName=RootNavigation, UpdateSourceTrigger=PropertyChanged, Mode=Default}"/>
+
+                    <ui:Snackbar Grid.Row="1"
+                                 x:Name="RootSnackbar"
+                                 MaxWidth="600"
+                                 Appearance="Secondary"
+                                 CloseButtonEnabled="True"
+                                 Icon="PuzzlePiece24"
+                                 Timeout="5000"/>
                 </Grid>
             </Border>
         </Grid>
 
         <Grid
             x:Name="RootWelcomeGrid"
-            Grid.Row="1"
+            Grid.Row="0"
+            Grid.RowSpan="2"
             Visibility="Hidden">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Image
-                    MaxWidth="180"
-                    RenderOptions.BitmapScalingMode="HighQuality"
-                    Source="pack://application:,,,/Resources/logo.png" />
-            </Grid>
-            <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                <ui:ProgressRing IsIndeterminate="True" />
-                <TextBlock
-                    Margin="0,12,0,0"
-                    FontSize="16"
-                    FontWeight="Medium"
-                    Text="Загрузка приложения"
-                    TextAlignment="Center"
-                    TextWrapping="Wrap" />
+            <StackPanel VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+
+                    <ui:SymbolIcon Symbol="Box24"
+                                   FontSize="104"/>
+
+                    <StackPanel Orientation="Vertical"
+                            Margin="16 0 0 0">
+                        <TextBlock Text="SIRUS"
+                               TextAlignment="Center"
+                               FontSize="48"
+                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                               FontWeight="Medium"/>
+                        <TextBlock Text="Addon Updater"
+                               TextAlignment="Center"
+                               Foreground="{DynamicResource TextFillColorDisabledBrush}"
+                               FontSize="36"
+                               FontWeight="Light"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <ui:ProgressRing IsIndeterminate="True" Margin="0 32 0 0"/>
             </StackPanel>
         </Grid>
 

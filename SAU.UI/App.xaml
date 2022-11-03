@@ -9,6 +9,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="pack://application:,,,/SAU.UI;component/Resources/Languages/en.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/SAU.UI;component/Resources/Languages/ru.xaml"/>-->
                 <ui:ThemesDictionary Theme="Dark"/>
                 <ui:ControlsDictionary/>
             </ResourceDictionary.MergedDictionaries>

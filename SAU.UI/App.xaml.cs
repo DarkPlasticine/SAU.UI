@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -95,6 +96,11 @@ namespace SAU.UI
 
         private async void OnStartup(object sender, StartupEventArgs e)
         {
+            var resDic = new ResourceDictionary();
+            resDic.Source = new Uri($@"pack://application:,,,/Resources/Languages/{CultureInfo.CurrentCulture.Name}.xaml", UriKind.RelativeOrAbsolute);
+
+            App.Current.Resources.MergedDictionaries.Add(resDic);
+            
             await _host.StartAsync();
         }
     }
