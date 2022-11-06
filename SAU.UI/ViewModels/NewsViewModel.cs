@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.Input;
 using HtmlAgilityPack;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using OpenQA.Selenium.Chrome;
 using SAU.UI.Models;
 using System;
 using System.Collections.Generic;
