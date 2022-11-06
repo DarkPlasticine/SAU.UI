@@ -49,10 +49,11 @@
                     
                     <ui:NavigationItem Content="{DynamicResource MenuItemSearch}"
                                        Icon="GlobeSearch24"
-                                       PageType="{x:Type pages:Home}"/>
+                                       />
 
                     <ui:NavigationItem Content="{DynamicResource MenuItemNews}"
-                                       Icon="News28"/>
+                                       Icon="News28"
+                                       PageType="{x:Type pages:News}"/>
                 </ui:NavigationStore.Items>
                 <ui:NavigationStore.Footer>
                     <ui:NavigationItem Content="{DynamicResource MenuItemSettings}"
@@ -144,12 +145,12 @@
             ShowMaximize="True"
             ShowMinimize="True"
             UseSnapLayout="True">
-            <ui:TitleBar.Tray>
+            <!--<ui:TitleBar.Tray>
                 <ui:NotifyIcon FocusOnLeftClick="True"
                                Icon="pack://application:,,,/Resources/logo.png"
                                MenuOnRightClick="True"
                                TooltipText="Sirus Addon Updater"></ui:NotifyIcon>
-            </ui:TitleBar.Tray>
+            </ui:TitleBar.Tray>-->
         </ui:TitleBar>
     </Grid>
 </ui:UiWindow>

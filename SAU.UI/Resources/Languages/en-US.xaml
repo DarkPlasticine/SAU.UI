@@ -1,18 +1,27 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=System.Runtime">
+
+    <system:String x:Key="Culture">en-US</system:String>
+
     <!--Меню-->
     <system:String x:Key="MenuItemHome">Home</system:String>
     <system:String x:Key="MenuItemSearch">Search</system:String>
     <system:String x:Key="MenuItemNews">News</system:String>
     <system:String x:Key="MenuItemSettings">Settings</system:String>
     <system:String x:Key="MenuItemAbout">About</system:String>
+    
+    <!--Tray-->
+    <system:String x:Key="TrayMenuItemExit">Exit</system:String>
+
 
     <!--Окно установленных дополнений-->
 
     <!--Окно поиска дополнений-->
 
     <!--Окно новостей-->
+    <system:String x:Key="NewsPage">News</system:String>
+
 
     <!--Окно настроек-->
     <system:String x:Key="tbGame">Game</system:String>

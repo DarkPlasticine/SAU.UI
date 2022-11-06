@@ -13,7 +13,7 @@ namespace SAU.UI.Services
         {
             TooltipText = "Sirus Addon Updater";
 
-            Icon = BitmapFrame.Create(new Uri("pack://application:,,,/Resources/icon.png", UriKind.Absolute));
+            Icon = BitmapFrame.Create(new Uri("pack://application:,,,/Resources/logo.png", UriKind.Absolute));
 
             ContextMenu = new ContextMenu
             {
@@ -23,7 +23,7 @@ namespace SAU.UI.Services
                     new Separator(),
                     new Wpf.Ui.Controls.MenuItem
                     {
-                        Header = "Выход",
+                        Header = Application.Current.Resources["TrayMenuItemExit"].ToString(),
                         SymbolIcon = SymbolRegular.ArrowExit20,
                         Tag = "exitApp"
                     }
