@@ -46,12 +46,16 @@ namespace SAU.UI.ViewModels
             System.Diagnostics.Process.Start(sInfo);
         }
 
+        [RelayCommand]
+        private void Refresh()
+        {
+            _dataInitialized = false;
+            Task.Run(async () => await LoadNewsAsync());
+        }
+
         public NewsViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            VisibleLoad = Visibility.Visible;
-            VisibleNews = Visibility.Hidden;
-
             Task.Run(async () => await LoadNewsAsync());
         }
 
@@ -60,13 +64,8 @@ namespace SAU.UI.ViewModels
             if (_dataInitialized)
                 return;
 
-            var url = new Uri(@"https://sirus.su/");
-
-            //var options = new ChromeOptions();
-            //options.AddArgument("--headless");
-
-            //var html = new ChromeDriver(options).;
-            //html.Navigate().GoToUrl(url);
+            VisibleLoad = Visibility.Visible;
+            VisibleNews = Visibility.Hidden;
 
             var test = new HtmlWeb();
             var jsonData = await test.LoadFromWebAsync("https://sirus.su/api/posts?lang=ru");

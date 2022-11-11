@@ -9,7 +9,7 @@
       d:DataContext="{d:DesignInstance local:Setting, IsDesignTimeCreatable=False}"
       Scrollable="True"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Настройки">
+      Title="{DynamicResource MenuItemSettings}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

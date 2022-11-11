@@ -8,7 +8,7 @@
     <system:String x:Key="MenuItemHome">Обзор</system:String>
     <system:String x:Key="MenuItemSearch">Поиск</system:String>
     <system:String x:Key="MenuItemNews">Новости</system:String>
-    <system:String x:Key="MenuItemSettings">Настройки</system:String>
+    <system:String x:Key="MenuItemSeФttings">Настройки</system:String>
     <system:String x:Key="MenuItemAbout">About</system:String>
 
     <!--Tray-->
@@ -19,7 +19,7 @@
     <!--Окно поиска дополнений-->
 
     <!--Окно новостей-->
-    <system:String x:Key="NewsPage">Новости</system:String>
+    <system:String x:Key="NewsContextMenuRefresh">Обновить</system:String>
 
     <!--Окно настроек-->
     <system:String x:Key="tbGame">Игра</system:String> <!---->

@@ -20,7 +20,8 @@
     <!--Окно поиска дополнений-->
 
     <!--Окно новостей-->
-    <system:String x:Key="NewsPage">News</system:String>
+    <system:String x:Key="NewsContextMenuRefresh">Обновить</system:String>
+
 
 
     <!--Окно настроек-->

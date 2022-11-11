@@ -62,9 +62,16 @@
                     </ui:CardAction>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
-
+            <ui:VirtualizingItemsControl.ContextMenu>
+                <ContextMenu>
+                    <ui:MenuItem Header="{DynamicResource NewsContextMenuRefresh}"
+                              Command="{Binding ViewModel.RefreshCommand}"
+                              SymbolIcon="ArrowClockwise48"/>
+                </ContextMenu>
+            </ui:VirtualizingItemsControl.ContextMenu>
 
         </ui:VirtualizingItemsControl>
+        
     </Grid>
    
 </ui:UiPage>
