@@ -42,7 +42,7 @@
                                Appearance="Primary"
                                FontWeight="Medium"
                                FontSize="18"
-                               Command="{Binding ViewModel.SelectFolderCommand}"
+                               Command="{Binding ViewModel.ShowFolderDialogCommand}"
                                ToolTip="{DynamicResource ttFolderGame}"/>
                 </ui:CardControl>
 
@@ -59,7 +59,7 @@
                     <ComboBox IsEditable="False"
                               ItemsSource="{Binding ViewModel.LanguageList, Mode=OneWay}"
                               DisplayMemberPath="NativeName"
-                              SelectedIndex="{Binding ViewModel.SelectedLanguage}"/>
+                              SelectedIndex="{Binding ViewModel.SelectedLanguage, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                 </ui:CardControl>
 
                 <!--Смена темы-->

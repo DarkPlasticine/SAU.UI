@@ -21,6 +21,7 @@ namespace SAU.UI.Views
 
         private readonly IThemeService _themeService;
         private readonly ITaskBarService _taskBarService;
+        //private readonly
 
         public ContainerViewModel ViewModel { get; }
 
@@ -43,6 +44,7 @@ namespace SAU.UI.Views
             SetPageService(pageService);
 
             navigationService.SetNavigationControl(RootNavigation);
+            snackbarService.SetSnackbarControl(RootSnackbar);
             dialogService.SetDialogControl(RootDialog);
 
             Loaded += (_, _) => InvokeSplashScreen();

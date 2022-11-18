@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SAU.UI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,25 +13,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SAU.UI.ViewModels;
 using Wpf.Ui.Common.Interfaces;
-using Wpf.Ui.Mvvm.Contracts;
 
 namespace SAU.UI.Views.Pages
 {
     /// <summary>
-    /// Interaction logic for Setting.xaml
+    /// Логика взаимодействия для SearchAddon.xaml
     /// </summary>
-    public partial class Setting : INavigableView<SettingViewModel>
+    public partial class SearchAddon : INavigableView<SearchAddonViewModel>
     {
-        public Setting(SettingViewModel viewModel, ISnackbarService snackbarService)
+        public SearchAddon(SearchAddonViewModel viewModel)
         {
             ViewModel = viewModel;
-            
-
             InitializeComponent();
+            
         }
 
-        public SettingViewModel ViewModel { get; }
+        public SearchAddonViewModel ViewModel { get; }
     }
 }

@@ -8,7 +8,7 @@
     <system:String x:Key="MenuItemHome">Обзор</system:String>
     <system:String x:Key="MenuItemSearch">Поиск</system:String>
     <system:String x:Key="MenuItemNews">Новости</system:String>
-    <system:String x:Key="MenuItemSeФttings">Настройки</system:String>
+    <system:String x:Key="MenuItemSettings">Настройки</system:String>
     <system:String x:Key="MenuItemAbout">About</system:String>
 
     <!--Tray-->
@@ -27,6 +27,7 @@
     <system:String x:Key="ttFolderGame">Выбор папки игры</system:String>
     <system:String x:Key="tbApplication">Приложение</system:String>
     <system:String x:Key="tbLanguage">Язык приложения</system:String>
+    <system:String x:Key="msgSaveSettings">Настройки сохранены</system:String>
     <system:String x:Key="tbTheme">Тема приложения</system:String>
     <system:String x:Key="tbParamThemeDark">Установлена темная тема</system:String>
     <system:String x:Key="tbParamThemeLight">Установлена светлая тема</system:String>

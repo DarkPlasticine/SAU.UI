@@ -31,6 +31,7 @@
     <system:String x:Key="ttFolderGame">Select game folder</system:String>
     <system:String x:Key="tbApplication">Application</system:String>
     <system:String x:Key="tbLanguage">Language</system:String>
+    <system:String x:Key="msgSaveSettings">Settings have been saved</system:String>
     <system:String x:Key="tbTheme">Theme</system:String>
     <system:String x:Key="tbParamThemeDark">Select dark theme</system:String>
     <system:String x:Key="tbParamThemeLight">Select light theme</system:String>

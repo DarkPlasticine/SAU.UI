@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using SAU.UI.Models;
 using SAU.UI.Services;
 using SAU.UI.Services.Contracts;
+using SAU.UI.Services.Interfaces;
 using SAU.UI.ViewModels;
 using Wpf.Ui.Mvvm.Contracts;
 using Wpf.Ui.Mvvm.Services;
@@ -60,6 +61,8 @@ namespace SAU.UI
                 // Service containing navigation, same as INavigationWindow... but without window
                 services.AddSingleton<INavigationService, NavigationService>();
 
+                services.AddSingleton<ISettingsApp>(x => new SettingsApp(Path.Combine(Environment.CurrentDirectory, @"settings.sau")));
+
                 // Main window container with navigation
                 services.AddScoped<INavigationWindow, Views.Container>();
                 services.AddScoped<ContainerViewModel>();
@@ -102,12 +105,23 @@ namespace SAU.UI
 
         private async void OnStartup(object sender, StartupEventArgs e)
         {
+            LoadSettings();
+
+            await _host.StartAsync();
+        }
+
+        private void LoadSettings()
+        {
+            var settings = GetService<ISettingsApp>();
+
+            settings.Load();
+
             var resDic = new ResourceDictionary();
-            resDic.Source = new Uri($@"pack://application:,,,/Resources/Languages/{CultureInfo.CurrentCulture.Name}.xaml", UriKind.RelativeOrAbsolute);
+            resDic.Source = new Uri($@"pack://application:,,,/Resources/Languages/{settings.Culture}.xaml", UriKind.RelativeOrAbsolute);
 
             App.Current.Resources.MergedDictionaries.Add(resDic);
-            
-            await _host.StartAsync();
+
+            GetService<IThemeService>().SetTheme(settings.ThemeApp);
         }
     }
 }
