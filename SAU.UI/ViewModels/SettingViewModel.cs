@@ -62,16 +62,6 @@ namespace SAU.UI.ViewModels
             }
         }
 
-
-        /// <summary>
-        /// Выбранная тема
-        /// </summary>
-        //public string SelectedThemeApp
-        //{
-        //    get => _selectedThemeApp;
-        //    set => SetProperty(ref _selectedThemeApp, value);
-        //}
-
         /// <summary>
         /// Язык приложения
         /// </summary>
