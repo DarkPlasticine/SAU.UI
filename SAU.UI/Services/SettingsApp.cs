@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using SAU.UI.Models;
 using SAU.UI.Services.Interfaces;
 using Wpf.Ui.Appearance;
 
@@ -13,6 +15,7 @@ namespace SAU.UI.Services
         public string Culture { get; set; } = "en-US";
         public string PathGame { get; set; }
         public ThemeType ThemeApp { get; set; } = ThemeType.Dark;
+        public List<GitHubSource> GitHubSources { get; set; }
 
         public SettingsApp(string filePath)
         {

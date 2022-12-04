@@ -7,8 +7,30 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="{DynamicResource MenuItemSearch}">
-
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ui:AutoSuggestBox Grid.Column="0"
+                               Margin="0 8 8 0"
+                               PlaceholderText="{Binding SearchBoxAllAddons}"/>
+
+            <ui:Button Grid.Column="1"
+                       Padding="6"
+                       Margin="0 6 0 0"
+                       HorizontalAlignment="Stretch"
+                       Appearance="Primary"
+                       FontSize="16"
+                       ToolTip="{DynamicResource NewsContextMenuRefresh}"
+                       Icon="ArrowClockwise48"/>
+        </Grid>
     </Grid>
 </ui:UiPage>

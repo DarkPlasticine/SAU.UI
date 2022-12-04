@@ -78,6 +78,22 @@
                     <ui:ToggleSwitch IsChecked="{Binding ViewModel.ThemeApp}"/>
                 </ui:CardControl>
             </StackPanel>
+            <ListBox Margin="0 8 0 0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Column="0"/>
+                            <TextBlock Grid.Column="1"/>
+                            <TextBlock Grid.Column="2"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </VirtualizingStackPanel>
     </Grid>
 </ui:UiPage>

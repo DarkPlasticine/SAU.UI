@@ -49,6 +49,7 @@
                     
                     <ui:NavigationItem Content="{DynamicResource MenuItemSearch}"
                                        Icon="GlobeSearch24"
+                                       PageType="{x:Type pages:SearchAddon}"
                                        />
 
                     <ui:NavigationItem Content="{DynamicResource MenuItemNews}"

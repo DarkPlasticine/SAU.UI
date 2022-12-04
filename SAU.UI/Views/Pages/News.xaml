@@ -30,7 +30,7 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
-                <DataTemplate DataType="news:News">
+                <DataTemplate DataType="news:NewsModel">
                     <ui:CardAction Margin="8"
                                Width="Auto"
                                Height="AUto"

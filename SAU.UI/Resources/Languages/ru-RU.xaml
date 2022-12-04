@@ -17,6 +17,8 @@
     <!--Окно установленных дополнений-->
 
     <!--Окно поиска дополнений-->
+    <system:String x:Key="SearchBoxAllAddons">Поиск аддонов</system:String>
+
 
     <!--Окно новостей-->
     <system:String x:Key="NewsContextMenuRefresh">Обновить</system:String>
