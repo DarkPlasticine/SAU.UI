@@ -70,6 +70,9 @@ namespace SAU.UI
                 services.AddScoped<Views.Pages.Home>();
                 services.AddScoped<HomeViewModel>();
 
+                services.AddScoped<Views.Pages.SearchAddon>();
+                services.AddScoped<SearchAddonViewModel>();
+
                 services.AddScoped<Views.Pages.Setting>();
                 services.AddScoped<SettingViewModel>();
 

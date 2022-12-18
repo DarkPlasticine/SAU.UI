@@ -78,18 +78,60 @@
                     <ui:ToggleSwitch IsChecked="{Binding ViewModel.ThemeApp}"/>
                 </ui:CardControl>
             </StackPanel>
-            <ListBox Margin="0 8 0 0">
+
+
+            <Grid Margin="0 16 4 8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{DynamicResource tbGithubSources}"
+                           VerticalAlignment="Bottom"
+                           Foreground="{DynamicResource TextFillColorSecondaryBrush}"/>
+                <ui:Button Grid.Column="1"
+                           Icon="Add24" 
+                           Margin="8 0"
+                           Appearance="Primary"
+                           FontWeight="Medium"
+                           ToolTip="{DynamicResource ttAddGithubSource}"
+                           FontSize="18"/>
+                <ui:SymbolIcon Grid.Column="2"
+                               ToolTip="{DynamicResource ttInfoGithubSource}"
+                               Symbol="Info24"
+                               FontSize="18"/>
+            </Grid>
+            <ListBox Margin="0 0 4 0"
+                     SelectionMode="Single"
+                     ItemsSource="{Binding ViewModel.GitHubSources}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="30px"/>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                            <CheckBox Grid.Column="0"/>
-                            <TextBlock Grid.Column="1"/>
-                            <TextBlock Grid.Column="2"/>
+
+                            <CheckBox Grid.Column="0"
+                                      ToolTip="{DynamicResource ttIsEnabledGithubSource}"
+                                          IsChecked="{Binding IsEnabled}"/>
+
+                            <TextBlock Grid.Column="1" 
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       Text="{Binding Link}"/>
+                            <TextBlock Grid.Column="2" 
+                                       Margin="8 0"
+                                       VerticalAlignment="Center"
+                                       Text="{Binding Count}"/>
+                            <ui:Button Grid.Column="3"
+                                       Icon="Delete24"
+                                       Appearance="Secondary"
+                                       FontWeight="Medium"
+                                       ToolTip="{DynamicResource ttDeleteGithubSource}"
+                                       FontSize="18"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

@@ -43,6 +43,9 @@ namespace SAU.UI.ViewModels
         [ObservableProperty]
         private IEnumerable<CultureInfo> _languageList = new CultureInfo[]{};
 
+        [ObservableProperty]
+        private IEnumerable<GitHubSource> _gitHubSources;
+
         //public ICommand SelectFolderCommand => _selectFolderCommand ??= new RelayCommand(ShowFolderDialog);
         //public ICommand ChangeLangCommand => _changeLangCommand ??= new RelayCommand(ChangeLanguage);
 
@@ -92,6 +95,30 @@ namespace SAU.UI.ViewModels
             _settingsApp.SettingsSaved += _settingsApp_SettingsSaved;
 
             SelectedThemeApp = _settingsApp.ThemeApp == ThemeType.Dark ? Application.Current.Resources["tbParamThemeDark"].ToString() : Application.Current.Resources["tbParamThemeLight"].ToString();
+
+            GitHubSources = _settingsApp.GitHubSources;
+
+            //GitHubSources = new List<GitHubSource>
+            //{
+            //    new GitHubSource
+            //    {
+            //        Count = 210,
+            //        IsEnabled = true,
+            //        Link = $"https://github.com"
+            //    },
+            //    new GitHubSource
+            //    {
+            //        Count = 10,
+            //        IsEnabled = false,
+            //        Link = $"https://github.com"
+            //    },
+            //    new GitHubSource
+            //    {
+            //        Count = 90,
+            //        IsEnabled = true,
+            //        Link = $"https://github.com"
+            //    }
+            //};
 
             LanguageList = new[]
             {

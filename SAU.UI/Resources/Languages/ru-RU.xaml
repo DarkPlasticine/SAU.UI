@@ -33,6 +33,11 @@
     <system:String x:Key="tbTheme">Тема приложения</system:String>
     <system:String x:Key="tbParamThemeDark">Установлена темная тема</system:String>
     <system:String x:Key="tbParamThemeLight">Установлена светлая тема</system:String>
+    <system:String x:Key="tbGithubSources">Аддоны с GitHub</system:String>
+    <system:String x:Key="ttAddGithubSource">Добавить репозиторий с GitHub</system:String>
+    <system:String x:Key="ttInfoGithubSource">Добавлять страницу автора</system:String>
+    <system:String x:Key="ttDeleteGithubSource">Удалить репозиторий из списка</system:String>
+    <system:String x:Key="ttIsEnabledGithubSource">Отключить репозиторий из сканирования</system:String>
 
     <!--Окно о программе-->
     <system:String x:Key="tbSources">Использованные ресурсы</system:String>

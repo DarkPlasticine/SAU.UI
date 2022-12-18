@@ -1,4 +1,5 @@
-﻿<ui:UiPage  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="SAU.UI.Views.Pages.SearchAddon"
+﻿<ui:UiPage  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" 
+            x:Class="SAU.UI.Views.Pages.SearchAddon"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,6 +7,7 @@
       xmlns:local="clr-namespace:SAU.UI.Views.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+            Scrollable="True"
       Title="{DynamicResource MenuItemSearch}">
     <Grid>
         <Grid.RowDefinitions>
@@ -13,7 +15,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0"
+              Margin="12 18 12 16">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
@@ -28,9 +31,74 @@
                        Margin="0 6 0 0"
                        HorizontalAlignment="Stretch"
                        Appearance="Primary"
-                       FontSize="16"
+                       FontSize="18"
                        ToolTip="{DynamicResource NewsContextMenuRefresh}"
                        Icon="ArrowClockwise48"/>
         </Grid>
+
+        <ui:Card Grid.Row="1" Margin="0,0,4,0" Width="150"
+                 Visibility="Collapsed">
+            <StackPanel>
+                <ui:SymbolIcon Margin="14"
+                               FontSize="64"
+                               Symbol="PuzzlePiece24"/>
+                <TextBlock
+                    Grid.Row="0"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    TextWrapping="Wrap"
+                    Text="AckisRecipeList-for-sirus" />
+                <TextBlock
+                    Grid.Row="0"
+                    FontSize="12"
+                    Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                    Text="fxpw" />
+                <ui:Rating
+                    Margin="0,0,0,40"
+                    HorizontalAlignment="Left"
+                    FontSize="14"
+                    Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                    Value="4" />
+                <TextBlock
+                    Grid.Row="0"
+                    FontSize="12"
+                    FontWeight="Bold"
+                    Text="Installed" />
+            </StackPanel>
+        </ui:Card>
+
+        <ui:VirtualizingItemsControl Grid.Row="1">
+            <ui:VirtualizingItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <ui:Card Margin="0,0,4,0">
+                        <StackPanel>
+                            <ui:SymbolIcon Margin="14"
+                                           Symbol="PuzzlePiece24"/>
+                            <TextBlock
+                                Grid.Row="0"
+                                FontSize="16"
+                                FontWeight="Bold"
+                                Text="WPF UI" />
+                            <TextBlock
+                                Grid.Row="0"
+                                FontSize="12"
+                                Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                                Text="Windows Library" />
+                            <ui:Rating
+                                Margin="0,0,0,40"
+                                HorizontalAlignment="Left"
+                                FontSize="14"
+                                Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                                Value="4" />
+                            <TextBlock
+                                Grid.Row="0"
+                                FontSize="12"
+                                FontWeight="Bold"
+                                Text="Installed" />
+                        </StackPanel>
+                    </ui:Card>
+                </DataTemplate>
+            </ui:VirtualizingItemsControl.ItemTemplate>
+        </ui:VirtualizingItemsControl>
     </Grid>
 </ui:UiPage>

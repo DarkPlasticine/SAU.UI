@@ -12,10 +12,11 @@ namespace SAU.UI.Services
     {
         private readonly string _filePath;
 
-        public string Culture { get; set; } = "en-US";
+        public string Culture { get; set; }
         public string PathGame { get; set; }
-        public ThemeType ThemeApp { get; set; } = ThemeType.Dark;
+        public ThemeType ThemeApp { get; set; }
         public List<GitHubSource> GitHubSources { get; set; }
+       
 
         public SettingsApp(string filePath)
         {
@@ -29,7 +30,7 @@ namespace SAU.UI.Services
                 var serializer = new JsonSerializer();
                 
                 if (!File.Exists(_filePath))
-                    Save();
+                    Reset();
 
                 using var fs = File.Open(_filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                 using var reader = new StreamReader(fs);
@@ -71,12 +72,29 @@ namespace SAU.UI.Services
 
         public void Reset()
         {
+            Culture = "en-US";
+            PathGame = String.Empty;
+            ThemeApp = ThemeType.Dark;
+            GitHubSources = new List<GitHubSource>
+            {
+                new GitHubSource
+                {
+                    Link = $"https://github.com/fxpw",
+                    IsEnabled = true,
+                    Count = 0
+                }
+            };
+
+            Save();
+
             SettingsReset?.Invoke(this, EventArgs.Empty);
-            Load();
+           // Load();
         }
 
         public event EventHandler SettingsReset;
         public event EventHandler SettingsSaved;
         public event EventHandler SettingsLoaded;
+
+        
     }
 }

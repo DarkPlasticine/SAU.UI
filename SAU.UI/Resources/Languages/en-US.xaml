@@ -37,6 +37,12 @@
     <system:String x:Key="tbTheme">Theme</system:String>
     <system:String x:Key="tbParamThemeDark">Select dark theme</system:String>
     <system:String x:Key="tbParamThemeLight">Select light theme</system:String>
+    <system:String x:Key="tbGithubSources">GitHub addon sources</system:String>
+    <system:String x:Key="ttAddGithubSource">Add Github repository</system:String>
+    <system:String x:Key="ttInfoGithubSource">Add author page</system:String>
+    <system:String x:Key="ttDeleteGithubSource">Remove a repository from the list</system:String>
+    <system:String x:Key="ttIsEnabledGithubSource">Disable repository</system:String>
+
 
     <!--Окно о программе-->
     <system:String x:Key="tbSources">Sources</system:String>
