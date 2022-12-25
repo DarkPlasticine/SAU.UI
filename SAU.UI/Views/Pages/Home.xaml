@@ -89,14 +89,12 @@
                                     TextWrapping="Wrap"
                                     Text="{Binding Title}" />
                                 <TextBlock
-                                        HorizontalAlignment="Left"
                                         FontSize="12"
                                         Foreground="{DynamicResource TextFillColorTertiaryBrush}"
                                         Text="{Binding LastUpdate, Converter={StaticResource DateConverter}}" />
 
                                 <TextBlock
                                         FontSize="12"
-                                        HorizontalAlignment="Right"
                                         TextWrapping="Wrap"
                                         Foreground="{DynamicResource TextFillColorTertiaryBrush}"
                                         Text="{Binding AddonInfo.Version}" />

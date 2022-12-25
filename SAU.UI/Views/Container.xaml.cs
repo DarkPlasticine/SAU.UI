@@ -23,6 +23,8 @@ namespace SAU.UI.Views
         private readonly ITaskBarService _taskBarService;
         //private readonly
 
+
+
         public ContainerViewModel ViewModel { get; }
 
         public Container(ContainerViewModel viewModel, 

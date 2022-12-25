@@ -106,7 +106,7 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center">
 
-                    <ui:SymbolIcon Symbol="Box24"
+                    <ui:SymbolIcon Symbol="PuzzlePiece24"
                                    FontSize="104"/>
 
                     <StackPanel Orientation="Vertical"
@@ -140,12 +140,31 @@
             Title="Sirus Addon Updater"
             Grid.Row="0"
             ForceShutdown="False"
-            Icon="pack://application:,,,/Resources/logo.png"
+            Icon="pack://application:,,,/Resources/puzzle.png"
             MinimizeToTray="False"
             ShowClose="True"
             ShowMaximize="True"
             ShowMinimize="True"
             UseSnapLayout="True">
+            <ui:TitleBar.Header>
+                <StackPanel Margin="0 0 12 0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <ui:Button Margin="0 0 4 0"
+                               Padding="4"
+                               x:Name="VoteButton"
+                               Appearance="Secondary"
+                               ToolTip="Голосовать за сервер"
+                               Icon="StarEmphasis24"/>
+                    <ui:Button Margin="0 0 4 0"
+                               Padding="4"
+                               x:Name="StartGameButton"
+                               Appearance="Secondary"
+                               ToolTip="Запустить игру"
+                               Icon="Games24"/>
+                </StackPanel>
+            </ui:TitleBar.Header>
             <!--<ui:TitleBar.Tray>
                 <ui:NotifyIcon FocusOnLeftClick="True"
                                Icon="pack://application:,,,/Resources/logo.png"

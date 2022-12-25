@@ -13,13 +13,19 @@ namespace SAU.UI.Services
         {
             TooltipText = "Sirus Addon Updater";
 
-            Icon = BitmapFrame.Create(new Uri("pack://application:,,,/Resources/logo.png", UriKind.Absolute));
+            Icon = BitmapFrame.Create(new Uri("pack://application:,,,/Resources/puzzle.png", UriKind.Absolute));
 
             ContextMenu = new ContextMenu
             {
                 FontSize = 14d,
                 Items =
                 {
+                    new Wpf.Ui.Controls.MenuItem
+                    {
+                        Header = "Open",
+                        SymbolIcon = SymbolRegular.Window28,
+                        Tag = "openApp"
+                    },
                     new Separator(),
                     new Wpf.Ui.Controls.MenuItem
                     {
@@ -39,7 +45,7 @@ namespace SAU.UI.Services
 
         protected override void OnLeftClick()
         {
-            System.Diagnostics.Debug.WriteLine($"DEBUG | WPF UI Tray event: {nameof(OnLeftClick)}", "Wpf.Ui.Demo");
+            System.Diagnostics.Debug.WriteLine($"DEBUG | SAU.UI Tray event: {nameof(OnLeftClick)}", "SAU.Ui");
         }
 
         private void OnMenuItemClick(object sender, RoutedEventArgs e)
@@ -47,11 +53,13 @@ namespace SAU.UI.Services
             if (sender is not MenuItem menuItem)
                 return;
 
-            System.Diagnostics.Debug.WriteLine($"DEBUG | WPF UI Tray clicked: {menuItem.Tag}", "Wpf.Ui.Demo");
+            System.Diagnostics.Debug.WriteLine($"DEBUG | SAU.Ui Tray clicked: {menuItem.Tag}", "SAU.Ui");
 
             switch (menuItem.Tag)
             {
                 case "exitApp": App.Current.Shutdown(0); break;
+                case "openApp": App.Current.MainWindow.WindowState = WindowState.Normal;
+                    break;
                     default: break;
             }
         }
