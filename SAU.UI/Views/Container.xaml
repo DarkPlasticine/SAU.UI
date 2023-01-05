@@ -7,6 +7,8 @@
     xmlns:local="clr-namespace:SAU.UI"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     xmlns:pages="clr-namespace:SAU.UI.Views.Pages"
+    xmlns:viewmodels="clr-namespace:SAU.UI.ViewModels" 
+    d:DataContext="{d:DesignInstance Type=viewmodels:ContainerViewModel}"
     mc:Ignorable="d"
     Title="Sirus Addon Updater" 
     Height="654" 
@@ -151,17 +153,47 @@
                             HorizontalAlignment="Right"
                             VerticalAlignment="Center"
                             Orientation="Horizontal">
+                    
+                    <ui:VirtualizingItemsControl ItemsSource="{Binding ViewModel.Realms}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ui:Button Icon="Circle48"
+                                           IconFilled="True"
+                                           HorizontalAlignment="Stretch"
+                                           Margin="0 0 4 0"
+                                           Padding="4"
+                                           IconForeground="{Binding Color}"
+                                           ToolTip="{Binding Online}"
+                                           Content="{Binding Name}"
+                                           Command="{Binding Command}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ui:VirtualizingItemsControl>
+
                     <ui:Button Margin="0 0 4 0"
+                               Padding="4"
+                               Icon="Circle48"
+                               IconFilled="True"
+                               IconForeground="{Binding ViewModel.OnlineColor, Mode=TwoWay}"
+                               Content="{Binding ViewModel.AllOnline}"
+                               Command="{Binding ViewModel.ForceUpdateCommand}"/>
+
+                    <ui:Anchor Margin="0 0 4 0"
                                Padding="4"
                                x:Name="VoteButton"
                                Appearance="Secondary"
+                               NavigateUri="https://wow.mmotop.ru/servers/5130/votes/new"
                                ToolTip="Голосовать за сервер"
-                               Icon="StarEmphasis24"/>
+                               Icon="Star28"
+                               FontSize="18"
+                               IconForeground="Goldenrod"/>
+
                     <ui:Button Margin="0 0 4 0"
                                Padding="4"
                                x:Name="StartGameButton"
                                Appearance="Secondary"
                                ToolTip="Запустить игру"
+                               FontSize="18"
                                Icon="Games24"/>
                 </StackPanel>
             </ui:TitleBar.Header>
